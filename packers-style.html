@@ -24,7 +24,24 @@ center: [-102.33, 42.36],
     zoom: 3.7
 });
 
+map.on('load', function () {
 
+    map.addSource('packerSource', {
+        type: 'vector',
+        url: 'mapbox://bleege.03bv2wta'
+    });
+
+    map.addLayer({
+        "id": "packerLayer",
+        "type": "symbol",
+        "source": "packerSource",
+        "source-layer": "2016PackersSchedule-Sheet1",
+        "layout": {
+            "icon-image": "america-football-15",
+            "icon-size": 2
+        }
+    });
+});
 
 </script>
 
